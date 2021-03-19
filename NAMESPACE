@@ -1,0 +1,37 @@
+
+# functions
+
+export(centiles.boot, pc, gamlss.pc, getSVD, fitRolling, 
+       which.Data.Corr, which.yX.Corr, fitPCR, pcr, gamlss.pcr)
+
+import(stats)
+import(gamlss)
+import(gamlss.data)
+import(foreach)
+import(doParallel)
+import(glmnet)
+importFrom(gamlss.dist, dNO, qNO, pNO)
+importFrom("methods", "is")
+#importFrom(gamlss.dist, as.gamlss.family, NO)
+importFrom(graphics, lines,  plot)
+importFrom("graphics", "abline")
+importFrom("graphics", "polygon")
+importFrom("graphics", "text")
+#importFrom("base", "La.svd")
+importFrom("grDevices", "gray")
+importFrom("graphics", "par")
+
+S3method(print, centiles.boot)
+S3method(summary, centiles.boot)
+S3method(plot, centiles.boot)
+S3method(plot, pc)
+S3method(print, pc)
+S3method(coef, pc)
+
+S3method(plot, PCR)
+S3method(print, PCR)
+S3method(coef, PCR)
+S3method(fitted, PCR)
+S3method(summary, PCR)
+S3method(predict, PCR)
+S3method(vcov, PCR)
