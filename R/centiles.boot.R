@@ -100,7 +100,7 @@ if (calibration){
 print.centiles.boot <- function(x,...)
   {
   cat("\n Results from centiles.boot() taken from:", x$trueB, " simulations \n")
-  cat("\n The x-variable values are evaluated at: \n", x$xvalues)
+  cat("\n The x-variable values are evaluated at: \n", head(x$xvalues,5),"...", tail(x$xvalues,5),"\n")
   cat("\n The centile values are evaluated at: \n", x$cent, "\n")
   cat("\n Simulation was done from the original call: \n")
   ccc<-x$original.call

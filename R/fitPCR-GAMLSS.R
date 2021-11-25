@@ -108,7 +108,7 @@ startLambdaName <- as.character(attr(x, "NameForLambda"))
 if (!is.null(df))
 {
     fit <- fitPCR(x=X, y=y, weights=w, M=M, df=df, 
-                plot=T, r=r, k=k)
+                plot=FALSE, r=r, k=k)
      fv <- fitted(fit, pc=df)
     edf <- fit$pc
     res <- fit$residuals[ ,df]
@@ -117,7 +117,7 @@ if (!is.null(df))
  if (method=="GAIC")
  {
     val <- if (method=="GAIC") get(startLambdaName, envir=gamlss.env)    
-    fit <- fitPCR(x=X, y=y, weights=w, M=M, plot=T, k=k)
+    fit <- fitPCR(x=X, y=y, weights=w, M=M, plot=FALSE, k=k)
     tdf <- fit$pc
     cc <- ceiling(M/10)
 if(val!=0&&abs(val-tdf)>cc) #the difference too big
@@ -140,7 +140,7 @@ else
 ################################################################
        edf <-  M  
        fit <- fitPCR(x=X, y=y, weights=w, M=M, df=edf, 
-                     plot=T, r=r, k=k)       
+                     plot=FALSE, r=r, k=k)       
 getSigTerms <- function(obj, x=NULL, val=1.96)
   {
 if (is.null(x)) stop("the function need the original x variables")
@@ -166,7 +166,7 @@ fit$newbeta <- tresult$coefficients
  if (method=="SPCR")
  {
    fit <- fitPCR(x=X, y=y, weights=w, M=M, df=df, supervised=TRUE, 
-                 plot=F, r=r, k=k)   
+                 plot=FALSE, r=r, k=k)   
     fv <- fitted(fit)
     edf <- fit$pc
     res <- fit$residuals[ ,fit$pc]

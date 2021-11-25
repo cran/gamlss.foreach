@@ -76,23 +76,31 @@ For the function \code{pcr()} returns an object \code{PCR} see for the help for 
 }
 
 \references{
-Rigby, R. A. and  Stasinopoulos D. M. (2005). Generalized additive models for location, scale and shape,(with discussion), 
+Bjorn-Helge Mevik, Ron Wehrens and Kristian Hovde Liland
+  (2019). pls: Partial Least Squares and Principal Component
+  Regression. R package version 2.7-2.
+  https://CRAN.R-project.org/package=pls
+
+Rigby, R. A. and  Stasinopoulos D. M. (2005). Generalized additive models for location, scale and shape, (with discussion), 
 \emph{Appl. Statist.}, \bold{54}, part 3, pp 507-554.
 
-Rigby R.A., Stasinopoulos D. M., Heller G.,  and De Bastiani F., (2019) \emph{Distributions for modelling Location, Scale, and Shape: Using GAMLSS in R},  Chapman and Hall/CRC. 
+Rigby, R. A., Stasinopoulos, D. M.,  Heller, G. Z.,  and De Bastiani, F. (2019)
+	\emph{Distributions for modeling location, scale, and shape: Using GAMLSS in R}, Chapman and Hall/CRC, \doi{10.1201/9780429298547}. An older version can be found in \url{https://www.gamlss.com/}.
 
 Stasinopoulos D. M. Rigby R.A. (2007) Generalized additive models for location scale and shape (GAMLSS) in R.
-\emph{Journal of Statistical Software}, Vol. \bold{23}, Issue 7, Dec 2007, \url{https://www.jstatsoft.org/v23/i07}.
+\emph{Journal of Statistical Software}, Vol. \bold{23}, Issue 7, Dec 2007, \doi{10.18637/jss.v023.i07}.
 
-Stasinopoulos D. M., Rigby R.A., Heller G., Voudouris V., and De Bastiani F., (2017) \emph{Flexible Regression and Smoothing: Using GAMLSS in R}, Chapman and Hall/CRC. 
+Stasinopoulos D. M., Rigby R.A., Heller G., Voudouris V., and De Bastiani F., (2017)
+\emph{Flexible Regression and Smoothing: Using GAMLSS in R},  Chapman and Hall/CRC.  \doi{10.1201/b21973}
 
 Stasinopoulos, M. D., Rigby, R. A., and De Bastiani F., (2018) GAMLSS: a distributional regression approach, \emph{Statistical Modelling}, Vol. \bold{18}, 
-pp, 248-273, SAGE Publications Sage India: New Delhi, India.
+pp, 248-273, SAGE Publications Sage India: New Delhi, India. \doi{10.1177/1471082X18759144}
 
-Stasinopoulos, M. D., Rigby, R. A., Georgikopoulos N., and De Bastiani F., (2021) Principal  component regression in GAMLSS  applied to Greek-German government bond yield spreads, \emph{Statistical Modelling}, On press. 
+Stasinopoulos, M. D., Rigby, R. A., Georgikopoulos N., and De Bastiani F., (2021) Principal  component regression in GAMLSS  applied to Greek-German government bond yield spreads, \emph{Statistical Modelling} 
+\doi{10.1177/1471082X211022980}.  
 
 
-(see also \url{https://www.gamlss.com/}).
+(see also \url{https://www.gamlss.com/}).  
 
 }
 

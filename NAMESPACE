@@ -2,7 +2,8 @@
 # functions
 
 export(centiles.boot, pc, gamlss.pc, getSVD, fitRolling, 
-       which.Data.Corr, which.yX.Corr, fitPCR, pcr, gamlss.pcr)
+       which.Data.Corr, which.yX.Corr, fitPCR, pcr, gamlss.pcr,
+       BayesianBoot, NonParametricBoot)
 
 import(stats)
 import(gamlss)
@@ -20,6 +21,14 @@ importFrom("graphics", "text")
 #importFrom("base", "La.svd")
 importFrom("grDevices", "gray")
 importFrom("graphics", "par")
+importFrom("graphics", "rug")
+importFrom("utils", "head", "tail")
+S3method(print, Bayesian.boot)
+S3method(summary, Bayesian.boot)
+S3method(plot, Bayesian.boot)
+S3method(print, NonParametric.Boot)
+S3method(summary, NonParametric.Boot)
+S3method(plot, NonParametric.Boot)
 
 S3method(print, centiles.boot)
 S3method(summary, centiles.boot)

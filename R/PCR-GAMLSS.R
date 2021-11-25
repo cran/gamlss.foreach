@@ -281,11 +281,12 @@ which.yX.Corr <- function(y, x,
   # if   
   if(hierarchical)
   {
-    DF <- as.data.frame(x)  
+        DF <- as.data.frame(x)  
     nnames <- colnames(CC)[abs(CC)>r]
-    ff <- as.formula(paste("~ ",paste(nnames, collapse='+')),) 
-    if (any(grep(":", nnames))) ff <- as.formula(gsub(":", "*", as.character(ff)))
-    MM <- model.matrix(ff, DF)[,-1]
+        ff <- as.formula(paste("~ ",paste(nnames, collapse='+')),) 
+    if (any(grep(":", nnames))) ff <- eval(call("~",ff))
+     # ff <- as.formula(gsub(":", "*", as.character(ff)))
+        MM <- model.matrix(ff, DF)[,-1]
   } else
   {
     nnames <- colnames(CC)[abs(CC)>r]
