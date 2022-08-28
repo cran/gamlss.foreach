@@ -1,12 +1,12 @@
-2eb87a7595a422f95902646dce4b71a4 *DESCRIPTION
+5163f9673019728abff8e1997cebc94c *DESCRIPTION
 c071892e7eedd81ebb2900834ad71e43 *NAMESPACE
-857f0af46714f64ad66eac6ae909b437 *R/BaysianBoot_version-4.R
+fb07d1bf6f8253cb1253b5a735db95db *R/BaysianBoot_version-4.R
 ee3c63138789306684750cb057f5c49c *R/FitRollingGamlss.R
-525c6310d7322484c93c0f5b5cf817db *R/PCR-GAMLSS.R
+33f3971325ec7b42ee55b8517d4d7a3e *R/PCR-GAMLSS.R
 c3fffb7124548c66f888250b3d690442 *R/centiles.boot.R
 51e5c17a274a36f8fb20ddbed137f403 *R/fitPCR-GAMLSS.R
 ce72e04a98680c667193a2adf02b8f41 *R/fitPCR.R
-0408f1a45a478c969404ab5007f12b59 *build/partial.rdb
+81001df08960939218fc9ac7b1bc0bae *build/partial.rdb
 2c1b62f51c11a20f19328f261b38fc01 *man/BayesianBoot.Rd
 108183ae0a624b6a403158bcbbe6d6ee *man/centiles.boot.Rd
 3b7f64faa3b7231ebf0e82f9777542e5 *man/fitPCR.Rd
@@ -14,4 +14,4 @@ ce72e04a98680c667193a2adf02b8f41 *R/fitPCR.R
 97103f3c273e399f3bd8280c2251944e *man/fitted.PCR.Rd
 e63b2606bdf21190a5d10d8fbd105fcb *man/gamlss.foreach-package.Rd
 2e83623af000b9f5ebfbc20d590708c1 *man/pc.Rd
-9041f272ed747910633d444656b07a3a *man/which.Data.Corr.Rd
+819550d9b5de41b0759e3764d6920709 *man/which.Data.Corr.Rd

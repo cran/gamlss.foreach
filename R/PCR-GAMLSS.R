@@ -231,16 +231,19 @@ print.pc  <- function (x, digits = max(3, getOption("digits") - 3), ...)
 # The function outputs an 3 columns matrix
 # with the names of hight correlated pairs and their correlation 
 #-------------------------------------------------------------
-which.Data.Corr <- function(data, r=.90)
+which.Data.Corr <- function(data, r=.90, digits=3)
 {
-     if (abs(r)>=1||abs(r)<=0) stop("r should be greater than  0 and lass than 1")
-     Dim <- dim(data)
-      CC <- cor(data)
-     CCC <- CC-diag(rep(1,Dim[2]))
-if (is.null(colnames(data))) colnames(data) <- paste0("X", seq(1:dim(data)[2]))
-if (!any(which(abs(CCC)>r))) stop(cat("no correlation above", r, "\n"))
-      mm <- which(abs(CCC)>r, arr.ind=T)
-      nn <- mm[mm[,1]< mm[,2],]
+  if (abs(r)>=1||abs(r)<=0) stop("r should be greater than  0 and lass than 1")
+  
+  daTa <- subset(data,  select=ifelse(sapply(data,is.factor)|sapply(data,is.character)==TRUE, FALSE, TRUE))
+  Dim <- dim(daTa)
+  CC <- cor(daTa)
+  CC <- base::round(x = CC, digits = digits)
+  CCC <- CC-diag(rep(1,Dim[2]))
+  if (is.null(colnames(daTa))) colnames(daTa) <- paste0("X", seq(1:dim(data)[2]))
+  if (!any(which(abs(CCC)>r))) return(cat("no correlation above", r, "\n"))
+  mm <- which(abs(CCC)>r, arr.ind=T)
+  nn <- mm[mm[,1]< mm[,2],]
   if (is.vector(nn))
   {
     name1 <- colnames(data)[nn[1]]
@@ -248,8 +251,8 @@ if (!any(which(abs(CCC)>r))) stop(cat("no correlation above", r, "\n"))
     corrs <- CCC[nn[1],nn[2]]
   } else
   { name1 <- colnames(data)[nn[,1]]
-   name2 <- colnames(data)[nn[,2]]
-   corrs <- CCC[nn]
+  name2 <- colnames(data)[nn[,2]]
+  corrs <- CCC[nn]
   }
   cbind(name1, name2, corrs)
 }
@@ -268,10 +271,12 @@ which.yX.Corr <- function(y, x,
                              r =.50 , 
                           plot = TRUE, 
                   hierarchical = TRUE,
-                         print = TRUE)
+                         print = TRUE,
+                        digits = 3)
 {
   # get the correlations  
-  CC  <- cor(y, x)  
+  CC  <- cor(y, x)
+   CC <- base::round(x = CC, digits = digits)
   # if plotting is TRUE plot them 
   if (plot)
   {

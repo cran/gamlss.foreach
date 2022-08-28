@@ -12,9 +12,9 @@ The function \code{which.yX.Corr()} it takes as arguments a continuous response 
  and it creates a \code{data.frame} containing all variables with a pair-wise correlation above \code{r}. If the set of the continuous explanatory variables contains first order interactions, then by default, (\code{hierarchical = TRUE}), the main effects of the first order interactions will be also included so hierarchy will be preserved.  
 }
 \usage{
-which.Data.Corr(data, r = 0.9)
+which.Data.Corr(data, r = 0.9, digits=3)
 which.yX.Corr(y, x, r = 0.5, plot = TRUE, 
-              hierarchical = TRUE, print = TRUE)
+              hierarchical = TRUE, print = TRUE, digits=3)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,7 +24,8 @@ which.yX.Corr(y, x, r = 0.5, plot = TRUE,
   \item{x}{the (continuous) explanatory variables}
   \item{plot}{whether to plot the results or not}
   \item{print}{whether to print the dim of the new matrix or not}
-  \item{hierarchical}{This is designed for make sure that if first order interactions are included in the list the main effects will be also included.}
+  \item{hierarchical}{This is designed for make sure that if first order interactions are included in the list the main effects will be also included}
+  \item{digits}{the number of digits to print.}
 }
 %%\details{
 %%  ~~ If necessary, more details than the description above ~~

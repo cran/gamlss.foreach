@@ -276,6 +276,7 @@ print.Bayesian.boot <- function(x,...)
              else stop("data are not defined")  
  if (!is.data.frame(datA)) stop("data is not a data.frame")
                N <- nN <- dim(datA)[1]     # length of data
+               R <-  dim(datA)[2] 
  if (!is.null(newdata))
   {
    if(!is.data.frame(newdata))  stop("newdata should be a data.frame") 
@@ -289,12 +290,13 @@ print.Bayesian.boot <- function(x,...)
           result <- foreach(i = 1:B, .packages="gamlss", .errorhandling = "remove",
                         .export = c("coefAll1"), .inorder = FALSE)%dopar%
           {
-            ii <- sample(nrow(datA),nrow(datA),replace=T) 
-     boot_data <- datA[ii,]
-     cat(i,"\n")
-          mooo <- update(obj, data= boot_data ) 
-            s  <- if (is.null(newdata))   list(coef=coefAll1(mooo, deviance = TRUE)) #
-                  else  list(coef=coefAll1(mooo, deviance = TRUE), par=predictAll(mooo,newdata=newdata, output="matrix")) 
+               ii <- sample(N,N,replace=T) 
+        boot_data <- as.data.frame(datA[ii,])
+names( boot_data) <- names(datA)
+# cat(i,"\n")
+             mooo <- update(obj, data= boot_data ) 
+               s  <- if (is.null(newdata))   list(coef=coefAll1(mooo, deviance = TRUE)) #
+                      else  list(coef=coefAll1(mooo, deviance = TRUE), par=predictAll(mooo,newdata=newdata, output="matrix")) 
             return(s)
           }
 #  bootstrap_data <- data[sample(nrow(data),nrow(data),replace=T),]
